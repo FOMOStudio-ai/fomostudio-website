@@ -63,7 +63,7 @@ export default {
       );
     }
 
-    // 2. Try fetching static asset directly (e.g. style.css, images)
+    // 2. Try fetching static asset directly (CSS, JS, images, etc.)
     try {
       const assetResponse = await env.ASSETS.fetch(request);
       if (assetResponse.status !== 404) {
@@ -73,9 +73,21 @@ export default {
       // Ignore asset fetch errors
     }
 
-    // 3. SPA Fallback: Serve index.html natively with correct Content-Type
-    const urlClone = new URL(request.url);
-    urlClone.pathname = "/index.html";
-    return env.ASSETS.fetch(new Request(urlClone, request));
+    // 3. SPA Fallback: Serve index.html with enforced text/html MIME type
+    try {
+      const indexUrl = new URL("/index.html", request.url);
+      const assetResponse = await env.ASSETS.fetch(new Request(indexUrl, request));
+      
+      const body = await assetResponse.text();
+      return new Response(body, {
+        status: 200,
+        headers: {
+          "Content-Type": "text/html; charset=UTF-8",
+          "Cache-Control": "no-cache"
+        }
+      });
+    } catch (e) {
+      return new Response("Not Found", { status: 404 });
+    }
   }
 };
