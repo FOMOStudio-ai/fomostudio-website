@@ -1,6 +1,1 @@
-export async function onRequest(context) {
-  return new Response(JSON.stringify({ authenticated: true, user: "admin" }), {
-    status: 200,
-    headers: { "Content-Type": "application/json" }
-  });
-}
+export async function onRequest() { return Response.json({authenticated:true, canEdit:true}, {headers:{'Cache-Control':'no-store'}}); }

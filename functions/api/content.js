@@ -11,6 +11,7 @@ export async function onRequest(context) {
 
   if (request.method === "POST") {
     const payload = await request.json().catch(() => ({}));
+    if (!env.FOMO_STORE) return Response.json({error: "Content storage is not configured"}, {status:503});
     if (env.FOMO_STORE) {
       await env.FOMO_STORE.put("site_content", JSON.stringify(payload));
     }
