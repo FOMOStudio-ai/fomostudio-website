@@ -17,7 +17,7 @@
     header { position:fixed; z-index:20; inset:0 0 auto; background:linear-gradient(#0c0c0df2, transparent); }
     nav { height:82px; display:flex; align-items:center; justify-content:space-between; }
     
-    /* Top-Left Navbar Logo - Original Red/White Graphic */
+    /* Top-Left Navbar Logo */
     .brand { font-weight:800; letter-spacing:-.05em; font-size:1.35rem; display:flex; align-items:center; }
     .brand img { max-height:42px; width:auto; object-fit:contain; object-position:left; display:block; }
     
@@ -84,8 +84,8 @@
     .cta-link { color:var(--acid); font-size:1rem; border-bottom:1px solid; padding-bottom:6px; white-space:nowrap; }
     .foot { margin-top:90px; display:flex; justify-content:space-between; color:var(--muted); font-size:.72rem; text-transform:uppercase; letter-spacing:.1em; align-items:center; }
     
-    /* Circular Footer Logo */
-    .footer-logo { width:110px; height:110px; border-radius:50%; object-fit:contain; display:block; }
+    /* Circular Footer Logo with Explicit Dimensions */
+    .footer-logo { width:110px; height:110px; min-width:110px; min-height:110px; border-radius:50%; object-fit:contain; display:block; }
 
     .hero-cta{color:white;background:#d9002b;border-color:#d9002b;padding:16px 22px;font-weight:bold;font-size:1rem;display:inline-block}
     .owner-bar{position:sticky;top:0;z-index:50;background:#f1eee7;color:#111;display:flex;align-items:center;gap:12px;padding:12px 22px;flex-wrap:wrap;box-shadow:0 3px 16px #0005}
