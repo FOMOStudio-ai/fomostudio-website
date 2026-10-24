@@ -1,7 +1,7 @@
 // Used only by the independent Cloudflare build. Never trusts ChatGPT identity headers.
 const jwksCache=new Map();
 function decode64(s){return Uint8Array.from(atob(s.replace(/-/g,'+').replace(/_/g,'/')),c=>c.charCodeAt(0));}
-async function isOwner(request,env){
+export async function isOwner(request,env){
  try{
  const issuer=env.ACCESS_TEAM_DOMAIN?.replace(/\/$/,'');
  if(!issuer||!/^https:\/\/[a-z0-9-]+\.cloudflareaccess\.com$/.test(issuer)||!env.ACCESS_AUD||!env.OWNER_EMAIL)return false;
@@ -26,7 +26,7 @@ async function isOwner(request,env){
 export async function onRequest(context) {
   const {request, env} = context;
   const path = new URL(request.url).pathname.replace(/\/$/, '');
-  if (path === '/api/content' && request.method === 'GET') return context.next();
+  if ((path === '/api/content' || path === '/api/me') && request.method === 'GET') return context.next();
   if (!(await isOwner(request, env))) return Response.json({error:'Owner sign-in required', authenticated:false, canEdit:false},{status:401,headers:{'Cache-Control':'no-store'}});
   if (!['GET','HEAD'].includes(request.method) && request.headers.get('Origin') !== new URL(request.url).origin) return Response.json({error:'Invalid origin'},{status:403});
   return context.next();

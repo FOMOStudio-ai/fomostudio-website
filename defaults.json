@@ -1,0 +1,103 @@
+{
+  "version": 1,
+  "text": {
+    "eyebrow": "Concept films & brand visuals",
+    "heroTitle": "Ideas beyond",
+    "heroOutline": "the ordinary.",
+    "hero-copy": "FØMØ Studio creates concept films and difficult-to-produce brand visuals—combining creative direction, AI-assisted production and professional post-production.",
+    "copy-1": "Ideas in motion.",
+    "section-intro": "Campaign concepts, product worlds and brand stories for agencies and ambitious marketing teams.",
+    "disclosure": "Independent concept films and product studies. Brand examples are self-initiated work, not commissioned campaigns or endorsements.",
+    "copy-2": "Bring the vision into focus.",
+    "services-copy": "A creative production partner for advertising, branding and social agencies, and established brands with an ambitious brief. We develop the concept, explore the visual possibilities and finish the film with professional editorial, motion design, color and sound.",
+    "copy-3": "Campaign Concept Films",
+    "copy-4": "Turn a creative brief into a visual treatment, pitch film or campaign concept.",
+    "copy-5": "Brand Films",
+    "copy-6": "Distinctive storytelling shaped around your brand, audience and campaign.",
+    "copy-7": "Product Visualization",
+    "copy-8": "Explore difficult-to-produce product settings and visual ideas, with product fidelity reviewed throughout.",
+    "copy-9": "Professional Post-production",
+    "copy-10": "Editing, motion graphics, color and sound bring the work together for delivery.",
+    "copy-11": "Creative direction. Every step.",
+    "copy-12": "Find the real brief",
+    "copy-13": "We define the audience, business goal, message and practical constraints.",
+    "copy-14": "Build the visual world",
+    "copy-15": "Treatment, script, storyboard and reference frames establish the direction.",
+    "copy-16": "Generate with intent",
+    "copy-17": "We combine AI-assisted production with design and compositing, reviewing consistency shot by shot.",
+    "copy-18": "Make it production-ready",
+    "copy-19": "Editorial, motion design, sound, color and delivery turn experiments into work.",
+    "copy-20": "See your brand in motion",
+    "offer": "Request a free 5-second watermarked concept before commissioning a full project."
+  },
+  "email": "hello@fomostudio.ai",
+  "siteTitle": "FØMØ Studio — Concept Films & Brand Visuals",
+  "description": "FØMØ Studio creates concept films and difficult-to-produce brand visuals, combining creative direction, AI-assisted production and professional post-production.",
+  "location": "Available worldwide · Based in Raleigh, NC",
+  "background": "#28151c",
+  "projects": [
+    {
+      "id": "3957dcbe-ba7f-46bf-b96f-d462b6f9fbcd",
+      "title": "Tribucha Commercial Spec",
+      "meta": "Generative AI Workflow & Grading",
+      "label": "Veo · After Effects",
+      "category": "brand",
+      "ratio": 1.1428571428571428,
+      "wide": true
+    },
+    {
+      "id": "bf32c1aa-8fdc-40b0-9771-4ce6ed6b4240",
+      "title": "Burt's Bees Product Render",
+      "meta": "AI Product Visualization",
+      "label": "Compositing",
+      "category": "product",
+      "ratio": 1.1428571428571428,
+      "wide": false
+    },
+    {
+      "id": "b47acef5-c063-4516-ab2e-629639a63165",
+      "title": "Bigfoot — Stump",
+      "meta": "Concept film",
+      "label": "Independent concept",
+      "category": "story",
+      "ratio": 1,
+      "wide": false
+    },
+    {
+      "id": "0f1aecdf-14aa-4f9b-8593-392ad6659ec5",
+      "title": "Videri — More Than Looks",
+      "meta": "Chocolate concept",
+      "label": "Independent concept",
+      "category": "product",
+      "ratio": 1,
+      "wide": false
+    },
+    {
+      "id": "a2966645-e595-4d54-8f3e-4408c13cc794",
+      "title": "Videri — Fall for It",
+      "meta": "Chocolate concept",
+      "label": "Independent concept",
+      "category": "product",
+      "ratio": 1,
+      "wide": false
+    },
+    {
+      "id": "08e2a0aa-c88e-48be-baca-1b090171f264",
+      "title": "Fraser Fir Candle",
+      "meta": "Product concept",
+      "label": "Independent concept",
+      "category": "product",
+      "ratio": 1,
+      "wide": true
+    },
+    {
+      "id": "ada8e197-ba11-4c24-b0f1-a7bcca03a57b",
+      "title": "Eucamint",
+      "meta": "Product concept",
+      "label": "Independent concept",
+      "category": "product",
+      "ratio": 1,
+      "wide": false
+    }
+  ]
+}

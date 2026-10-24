@@ -1,0 +1,25 @@
+import assert from 'node:assert/strict';
+import fs from 'node:fs/promises';
+import {webcrypto} from 'node:crypto';
+import {validateContent,videoId} from '../content-schema.js';
+import {onRequest as content} from '../functions/api/content.js';
+import {onRequest as guard} from '../functions/api/_middleware.js';
+import {onRequest as upload} from '../functions/api/upload.js';
+globalThis.crypto ||= webcrypto;
+const defaults=JSON.parse(await fs.readFile(new URL('../defaults.json',import.meta.url)));
+assert.equal(validateContent(defaults).projects.length,7);
+assert.equal(videoId('https://player.mediadelivery.net/play/787458/'+defaults.projects[0].id),defaults.projects[0].id);
+assert.throws(()=>videoId('https://evil.example/play/787458/'+defaults.projects[0].id));
+assert.throws(()=>validateContent({...defaults,projects:[defaults.projects[0],defaults.projects[0]]}));
+assert.throws(()=>validateContent({...defaults,email:'javascript:alert(1)'}));
+assert.throws(()=>validateContent({...defaults,background:'url(x)'}));
+const kv=new Map();const env={FOMO_STORE:{get:async k=>kv.get(k)||null,put:async(k,v)=>kv.set(k,v)}};
+const put=(payload)=>new Request('https://fomostudio.ai/api/content',{method:'PUT',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});
+let r=await content({request:put({content:defaults,revision:null}),env});assert.equal(r.status,200);const first=await r.json();assert.ok(first.revision);
+r=await content({request:new Request('https://fomostudio.ai/api/content'),env});assert.deepEqual((await r.json()).content,defaults);
+r=await content({request:put({content:defaults,revision:null}),env});assert.equal(r.status,409);
+r=await content({request:put({content:defaults,revision:first.revision}),env:{}});assert.equal(r.status,503);
+kv.set('site_content',JSON.stringify({heroText:'legacy'}));r=await content({request:put({content:defaults,revision:null}),env});assert.equal(r.status,409);
+for(const path of ['content','upload']){r=await guard({request:new Request('https://fomostudio.ai/api/'+path,{method:'PUT',headers:{'Cf-Access-Jwt-Assertion':'spoof'}}),env:{},next:()=>{throw Error('Guard bypass')}});assert.equal(r.status,401)}
+r=await upload();assert.equal(r.status,409);assert.ok(!(await r.text()).includes('apiKey'));
+console.log('Passed: seven-video schema, URL validation, unsafe inputs, publishing/readback, stale revision, missing storage, legacy preservation, unauthorized writes and upload secret removal.');
