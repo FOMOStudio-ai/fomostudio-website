@@ -1,0 +1,9 @@
+name = "fomostudio-site"
+compatibility_date = "2026-01-01"
+
+[site]
+bucket = "."name = "fomostudio-site"
+compatibility_date = "2026-01-01"
+
+[site]
+bucket = "."
