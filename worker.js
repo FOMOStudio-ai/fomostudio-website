@@ -63,21 +63,28 @@ export default {
       );
     }
 
-    // 2. Static Asset Fetching with SPA Fallback to index.html
+    // 2. Static Asset Fetching
     try {
-      // First attempt to fetch exact static asset requested
-      const response = await env.ASSETS.fetch(request);
-      if (response.status !== 404) {
-        return response;
+      const assetResponse = await env.ASSETS.fetch(request);
+      if (assetResponse.status !== 404) {
+        return assetResponse;
       }
     } catch (e) {
-      // Ignore initial asset fetch error
+      // Ignore asset fetch errors
     }
 
-    // For frontend SPA paths like /admin, serve index.html fallback
+    // 3. Fallback: Serve index.html as text/html for SPA routes (like /admin)
     try {
       const indexRequest = new Request(new URL("/index.html", request.url), request);
-      return await env.ASSETS.fetch(indexRequest);
+      const response = await env.ASSETS.fetch(indexRequest);
+      
+      return new Response(response.body, {
+        status: response.status,
+        headers: {
+          ...Object.fromEntries(response.headers),
+          "Content-Type": "text/html; charset=utf-8"
+        }
+      });
     } catch (e) {
       return new Response("Not Found", { status: 404 });
     }
