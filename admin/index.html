@@ -17,9 +17,9 @@
     header { position:fixed; z-index:20; inset:0 0 auto; background:linear-gradient(#0c0c0df2, transparent); }
     nav { height:82px; display:flex; align-items:center; justify-content:space-between; }
     
-    /* Top-Left Navbar Logo */
-    .brand { font-weight:800; letter-spacing:-.05em; font-size:1.35rem; display:flex; align-items:center; gap:14px; }
-    .brand img { max-height:35px; width:auto; object-fit:contain; object-position:left; filter:invert(1); display:block; }
+    /* Top-Left Navbar Wordmark Logo */
+    .brand { font-weight:800; letter-spacing:-.05em; font-size:1.35rem; display:flex; align-items:center; }
+    .brand img { max-height:45px; width:auto; object-fit:contain; object-position:left; filter:invert(1); display:block; }
     
     .navlinks { display:flex; align-items:center; gap:28px; font-size:.78rem; text-transform:uppercase; letter-spacing:.12em; }
     .navlinks .pill { border:1px solid var(--paper); padding:12px 17px; border-radius:99px; transition:.2s; }
@@ -50,7 +50,7 @@
     .filter.active, .filter:hover { background:var(--paper); color:var(--ink); }
     
     .grid { display:grid; grid-template-columns:repeat(12,1fr); gap:14px; }
-    .project { grid-column:span 4; aspect-ratio:4/5; position:relative; overflow:hidden; background:#191619; border:1px solid rgba(255,0,51,0.15); cursor:pointer; min-height:300px; }
+    .project { grid-column:span 4; aspect-ratio:4/5; position:relative; overflow:hidden; background:#1b1b1d; cursor:pointer; min-height:300px; }
     .project.wide { grid-column:span 8; aspect-ratio:16/9; }
     .project.hide { display:none; }
     
@@ -85,7 +85,7 @@
     .foot { margin-top:90px; display:flex; justify-content:space-between; color:var(--muted); font-size:.72rem; text-transform:uppercase; letter-spacing:.1em; align-items:center; }
     
     /* Circular Footer Logo */
-    .footer-logo { width:110px; height:110px; border-radius:50%; object-fit:contain; filter:none; display:block; }
+    .footer-logo { width:110px; height:110px; border-radius:50%; object-fit:contain; display:block; }
 
     .hero-cta{color:white;background:#d9002b;border-color:#d9002b;padding:16px 22px;font-weight:bold;font-size:1rem;display:inline-block}
     .owner-bar{position:sticky;top:0;z-index:50;background:#f1eee7;color:#111;display:flex;align-items:center;gap:12px;padding:12px 22px;flex-wrap:wrap;box-shadow:0 3px 16px #0005}
@@ -125,7 +125,7 @@
       <div class="section-head"><h2 data-text="copy-1">Ideas in motion.</h2><div><p class="section-intro" data-text="section-intro">Campaign concepts, product worlds and brand stories for agencies and ambitious marketing teams.</p><p class="disclosure" data-text="disclosure">Portfolio in development. Uploaded speculative work will be labeled as independent concepts, not commissioned campaigns.</p></div></div>
       <div class="filters" aria-label="Filter work"><button class="filter active" data-filter="all">All</button><button class="filter" data-filter="brand">Brand</button><button class="filter" data-filter="product">Product</button><button class="filter" data-filter="social">Social</button><button class="filter" data-filter="story">Story</button></div>
       
-      <!-- Video Portfolio Grid -->
+      <!-- Video Portfolio Grid with Corrected Burt's Bees Embed -->
       <div class="grid" id="project-grid">
         
         <!-- Project 1: Tribucha Commercial Spec -->
@@ -143,11 +143,11 @@
           </div>
         </div>
 
-        <!-- Project 2: Burt's Bees Product Render -->
+        <!-- Project 2: Burt's Bees Product Render (Corrected ID) -->
         <div class="project" data-category="product">
           <div class="spec">Compositing</div>
           <div style="position:absolute; inset:0; background:#000;">
-            <iframe src="https://player.mediadelivery.net/play/787458/08e2a0aa-c88e-48be-baca-1b090171f264" loading="lazy" style="width:100%; height:100%; border:0; position:absolute; inset:0;" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture" allowfullscreen="true"></iframe>
+            <iframe src="https://player.mediadelivery.net/play/787458/4277bc21-6e0b-47e0-b996-26789547d2f0" loading="lazy" style="width:100%; height:100%; border:0; position:absolute; inset:0;" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture" allowfullscreen="true"></iframe>
           </div>
           <div class="project-info">
             <div>
