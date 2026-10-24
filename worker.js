@@ -63,7 +63,7 @@ export default {
       );
     }
 
-    // 2. Static Asset Fetching
+    // 2. Try fetching static asset directly (e.g. style.css, images)
     try {
       const assetResponse = await env.ASSETS.fetch(request);
       if (assetResponse.status !== 404) {
@@ -73,20 +73,9 @@ export default {
       // Ignore asset fetch errors
     }
 
-    // 3. Fallback: Serve index.html as text/html for SPA routes (like /admin)
-    try {
-      const indexRequest = new Request(new URL("/index.html", request.url), request);
-      const response = await env.ASSETS.fetch(indexRequest);
-      
-      return new Response(response.body, {
-        status: response.status,
-        headers: {
-          ...Object.fromEntries(response.headers),
-          "Content-Type": "text/html; charset=utf-8"
-        }
-      });
-    } catch (e) {
-      return new Response("Not Found", { status: 404 });
-    }
+    // 3. SPA Fallback: Serve index.html natively with correct Content-Type
+    const urlClone = new URL(request.url);
+    urlClone.pathname = "/index.html";
+    return env.ASSETS.fetch(new Request(urlClone, request));
   }
 };
