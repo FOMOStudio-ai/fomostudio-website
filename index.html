@@ -4,21 +4,24 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>FØMØ Studio | AI Video Production & Motion Design</title>
-  <!-- Tailwind CSS CDN for instant styling -->
+  <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-zinc-950 text-zinc-100 font-sans antialiased selection:bg-indigo-500 selection:text-white">
+<body class="bg-zinc-950 text-zinc-100 font-sans antialiased selection:bg-rose-500 selection:text-white relative overflow-x-hidden">
+
+  <!-- Ambient Red Background Glow Effect -->
+  <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[400px] bg-rose-600/20 blur-[140px] rounded-full pointer-events-none z-0"></div>
 
   <!-- Header / Navigation -->
   <header class="fixed top-0 left-0 w-full z-50 bg-zinc-950/80 backdrop-blur-md border-b border-zinc-800/50">
     <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-      <span class="text-xl font-bold tracking-tight text-white">FØMØ<span class="text-indigo-500">STUDIO</span></span>
+      <span class="text-xl font-bold tracking-tight text-white">FØMØ<span class="text-rose-500">STUDIO</span></span>
       <a href="mailto:contact@fomostudio.ai" class="text-sm font-medium bg-zinc-900 hover:bg-zinc-800 text-zinc-200 border border-zinc-700/50 px-4 py-2 rounded-full transition">Get in Touch</a>
     </div>
   </header>
 
   <!-- Hero Section -->
-  <section class="pt-36 pb-20 px-6 max-w-7xl mx-auto text-center">
+  <section class="relative z-10 pt-36 pb-20 px-6 max-w-7xl mx-auto text-center">
     <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight text-white mb-6">
       Next-Gen AI Video & Motion Design
     </h1>
@@ -28,13 +31,12 @@
   </section>
 
   <!-- Video Portfolio Grid -->
-  <section id="work" class="pb-32 px-6 max-w-7xl mx-auto">
+  <section id="work" class="relative z-10 pb-32 px-6 max-w-7xl mx-auto">
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
       
       <!-- Video Item 1: Tribucha Spec -->
       <div class="bg-zinc-900/50 border border-zinc-800/80 rounded-2xl overflow-hidden p-4 flex flex-col">
         <div class="aspect-video w-full bg-zinc-950 rounded-xl overflow-hidden relative">
-          <!-- Replace the src below with your Bunny.net direct video embed iframe or video link -->
           <iframe src="https://player.mediadelivery.net/play/787458/3957dcbe-ba7f-46bf-b96f-d462b6f9fbcd" loading="lazy" class="w-full h-full absolute inset-0 border-0" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture" allowfullscreen="true"></iframe>
         </div>
         <div class="mt-4 flex items-center justify-between">
@@ -42,14 +44,13 @@
             <h3 class="font-semibold text-lg text-white">Tribucha Commercial Spec</h3>
             <p class="text-sm text-zinc-400">Generative AI Workflow & Grading</p>
           </div>
-          <span class="text-xs font-mono uppercase bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 px-2.5 py-1 rounded-md">Veo · After Effects</span>
+          <span class="text-xs font-mono uppercase bg-rose-500/10 text-rose-400 border border-rose-500/20 px-2.5 py-1 rounded-md">Veo · After Effects</span>
         </div>
       </div>
 
       <!-- Video Item 2: Burt's Bees Spec -->
       <div class="bg-zinc-900/50 border border-zinc-800/80 rounded-2xl overflow-hidden p-4 flex flex-col">
         <div class="aspect-video w-full bg-zinc-950 rounded-xl overflow-hidden relative">
-          <!-- Replace the src below with your Bunny.net direct video embed iframe or video link -->
           <iframe src="https://player.mediadelivery.net/play/787458/08e2a0aa-c88e-48be-baca-1b090171f264" loading="lazy" class="w-full h-full absolute inset-0 border-0" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture" allowfullscreen="true"></iframe>
         </div>
         <div class="mt-4 flex items-center justify-between">
@@ -57,7 +58,7 @@
             <h3 class="font-semibold text-lg text-white">Burt's Bees Product Render</h3>
             <p class="text-sm text-zinc-400">AI Product Visualization</p>
           </div>
-          <span class="text-xs font-mono uppercase bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 px-2.5 py-1 rounded-md">Compositing</span>
+          <span class="text-xs font-mono uppercase bg-rose-500/10 text-rose-400 border border-rose-500/20 px-2.5 py-1 rounded-md">Compositing</span>
         </div>
       </div>
 
