@@ -63,7 +63,7 @@ export default {
       );
     }
 
-    // 2. Delegate all static assets and SPA routes (/admin, etc.) to Cloudflare native asset binding
+    // 2. Native Static Asset & SPA routing
     return env.ASSETS.fetch(request);
   }
 };
