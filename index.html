@@ -129,9 +129,9 @@
     }
     @media(max-width:420px){.navlinks a[href="#services"]{display:none}.steps{grid-template-columns:1fr}.step,.step + .step{padding:22px 0;border-right:0;border-bottom:1px solid var(--line);min-height:0}.step h3{margin-top:22px}}
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.hero:before,.ticker span{animation:none}}
-    /* Fit the 1536 x 1344 films without cropping; the surrounding stage supplies the color. */
+    /* Fit each film without cropping; square videos override the comparison-film ratio. */
     .video-stage{position:absolute;inset:0;background:#28151c;container-type:size}
-    .video-stage iframe{width:min(100cqw,114.285714cqh)!important;height:min(100cqh,87.5cqw)!important;inset:50% auto auto 50%!important;transform:translate(-50%,-50%)}
+    .video-stage iframe{width:min(100cqw,var(--frame-width,114.285714cqh))!important;height:min(100cqh,var(--frame-height,87.5cqw))!important;inset:50% auto auto 50%!important;transform:translate(-50%,-50%)}
   </style>
 </head>
 <body>
@@ -145,7 +145,7 @@
     </section>
     <div class="ticker"><span>Creative direction · Campaign concepts · Brand films · Product visuals · Professional post-production</span></div>
     <section class="work shell" id="work">
-      <div class="section-head"><h2 data-text="copy-1">Ideas in motion.</h2><div><p class="section-intro" data-text="section-intro">Campaign concepts, product worlds and brand stories for agencies and ambitious marketing teams.</p><p class="disclosure" data-text="disclosure">Portfolio in development. Uploaded speculative work will be labeled as independent concepts, not commissioned campaigns.</p></div></div>
+      <div class="section-head"><h2 data-text="copy-1">Ideas in motion.</h2><div><p class="section-intro" data-text="section-intro">Campaign concepts, product worlds and brand stories for agencies and ambitious marketing teams.</p><p class="disclosure" data-text="disclosure">Independent concept films and product studies. Brand examples are self-initiated work, not commissioned campaigns or endorsements.</p></div></div>
       <div class="filters" aria-label="Filter work"><button class="filter active" data-filter="all">All</button><button class="filter" data-filter="brand">Brand</button><button class="filter" data-filter="product">Product</button><button class="filter" data-filter="social">Social</button><button class="filter" data-filter="story">Story</button></div>
       
       <!-- Video Portfolio Grid -->
@@ -155,7 +155,7 @@
         <div class="project wide" data-category="brand">
           <div class="spec">Veo · After Effects</div>
           <div class="video-stage">
-            <iframe src="https://player.mediadelivery.net/embed/787458/3957dcbe-ba7f-46bf-b96f-d462b6f9fbcd" loading="lazy" style="width:100%; height:100%; border:0; position:absolute; inset:0;" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture" allowfullscreen="true"></iframe>
+            <iframe src="https://player.mediadelivery.net/embed/787458/3957dcbe-ba7f-46bf-b96f-d462b6f9fbcd?autoplay=false" loading="lazy" style="width:100%; height:100%; border:0; position:absolute; inset:0;" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture" allowfullscreen="true"></iframe>
           </div>
           <div class="project-info">
             <div>
@@ -170,7 +170,7 @@
         <div class="project" data-category="product">
           <div class="spec">Compositing</div>
           <div class="video-stage">
-            <iframe src="https://player.mediadelivery.net/embed/787458/bf32c1aa-8fdc-40b0-9771-4ce6ed6b4240" loading="lazy" style="width:100%; height:100%; border:0; position:absolute; inset:0;" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture" allowfullscreen="true"></iframe>
+            <iframe src="https://player.mediadelivery.net/embed/787458/bf32c1aa-8fdc-40b0-9771-4ce6ed6b4240?autoplay=false" loading="lazy" style="width:100%; height:100%; border:0; position:absolute; inset:0;" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture" allowfullscreen="true"></iframe>
           </div>
           <div class="project-info">
             <div>
@@ -181,6 +181,45 @@
           </div>
         </div>
 
+        <article class="project" data-category="story">
+          <div class="spec">Independent concept</div>
+          <div class="video-stage" style="--frame-width:100cqh;--frame-height:100cqw">
+            <iframe src="https://player.mediadelivery.net/embed/787458/b47acef5-c063-4516-ab2e-629639a63165?autoplay=false" title="Bigfoot — Stump" loading="lazy" style="width:100%;height:100%;border:0;position:absolute;inset:0" allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;fullscreen" allowfullscreen></iframe>
+          </div>
+          <div class="project-info"><div><h3>Bigfoot — Stump</h3><div class="meta">Concept film</div></div></div>
+        </article>
+
+        <article class="project" data-category="product">
+          <div class="spec">Independent concept</div>
+          <div class="video-stage" style="--frame-width:100cqh;--frame-height:100cqw">
+            <iframe src="https://player.mediadelivery.net/embed/787458/0f1aecdf-14aa-4f9b-8593-392ad6659ec5?autoplay=false" title="Videri — More Than Looks" loading="lazy" style="width:100%;height:100%;border:0;position:absolute;inset:0" allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;fullscreen" allowfullscreen></iframe>
+          </div>
+          <div class="project-info"><div><h3>Videri — More Than Looks</h3><div class="meta">Chocolate concept</div></div></div>
+        </article>
+
+        <article class="project" data-category="product">
+          <div class="spec">Independent concept</div>
+          <div class="video-stage" style="--frame-width:100cqh;--frame-height:100cqw">
+            <iframe src="https://player.mediadelivery.net/embed/787458/a2966645-e595-4d54-8f3e-4408c13cc794?autoplay=false" title="Videri — Fall for It" loading="lazy" style="width:100%;height:100%;border:0;position:absolute;inset:0" allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;fullscreen" allowfullscreen></iframe>
+          </div>
+          <div class="project-info"><div><h3>Videri — Fall for It</h3><div class="meta">Chocolate concept</div></div></div>
+        </article>
+
+        <article class="project wide" data-category="product">
+          <div class="spec">Independent concept</div>
+          <div class="video-stage" style="--frame-width:100cqh;--frame-height:100cqw">
+            <iframe src="https://player.mediadelivery.net/embed/787458/08e2a0aa-c88e-48be-baca-1b090171f264?autoplay=false" title="Fraser Fir Candle" loading="lazy" style="width:100%;height:100%;border:0;position:absolute;inset:0" allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;fullscreen" allowfullscreen></iframe>
+          </div>
+          <div class="project-info"><div><h3>Fraser Fir Candle</h3><div class="meta">Product concept</div></div></div>
+        </article>
+
+        <article class="project" data-category="product">
+          <div class="spec">Independent concept</div>
+          <div class="video-stage" style="--frame-width:100cqh;--frame-height:100cqw">
+            <iframe src="https://player.mediadelivery.net/embed/787458/ada8e197-ba11-4c24-b0f1-a7bcca03a57b?autoplay=false" title="Eucamint" loading="lazy" style="width:100%;height:100%;border:0;position:absolute;inset:0" allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;fullscreen" allowfullscreen></iframe>
+          </div>
+          <div class="project-info"><div><h3>Eucamint</h3><div class="meta">Product concept</div></div></div>
+        </article>
       </div>
 
     </section>
