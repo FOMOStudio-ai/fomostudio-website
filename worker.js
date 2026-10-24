@@ -3,6 +3,7 @@ export default {
     const url = new URL(request.url);
     const path = url.pathname;
 
+    // 1. API Routes
     if (path === "/api/me") {
       return new Response(JSON.stringify({ authenticated: true, user: "admin" }), {
         status: 200,
@@ -62,8 +63,21 @@ export default {
       );
     }
 
+    // 2. Static Asset Fetching with SPA Fallback to index.html
     try {
-      return await env.ASSETS.fetch(request);
+      // First attempt to fetch exact static asset requested
+      const response = await env.ASSETS.fetch(request);
+      if (response.status !== 404) {
+        return response;
+      }
+    } catch (e) {
+      // Ignore initial asset fetch error
+    }
+
+    // For frontend SPA paths like /admin, serve index.html fallback
+    try {
+      const indexRequest = new Request(new URL("/index.html", request.url), request);
+      return await env.ASSETS.fetch(indexRequest);
     } catch (e) {
       return new Response("Not Found", { status: 404 });
     }
