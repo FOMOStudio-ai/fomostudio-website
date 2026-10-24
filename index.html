@@ -42,16 +42,20 @@
     .filter { border:1px solid var(--line); background:none; color:var(--paper); border-radius:99px; padding:10px 15px; cursor:pointer; text-transform:uppercase; letter-spacing:.08em; font-size:.72rem; }
     .filter.active, .filter:hover { background:var(--paper); color:var(--ink); }
     .grid { display:grid; grid-template-columns:repeat(12,1fr); gap:14px; }
-    .project { grid-column:span 4; aspect-ratio:4/5; position:relative; overflow:hidden; background:#1b1b1d; cursor:pointer; min-height:300px; }
+    
+    /* Project Card Background with Reddish/Acid Tone */
+    .project { grid-column:span 4; aspect-ratio:4/5; position:relative; overflow:hidden; background:linear-gradient(145deg, #1d1114, #120e11); border:1px solid rgba(255, 0, 51, 0.15); cursor:pointer; min-height:300px; }
     .project.wide { grid-column:span 8; aspect-ratio:16/9; }
     .project.hide { display:none; }
+    
     .motion { position:absolute; inset:-18%; transition:transform .8s cubic-bezier(.2,.7,.2,1); }
     .project:hover .motion { transform:scale(1.08) rotate(-1deg); }
-    .project-info { position:absolute; inset:auto 0 0; padding:60px 20px 20px; background:linear-gradient(transparent,#050505e8); display:flex; align-items:end; justify-content:space-between; gap:12px; z-index:3; }
+    .project-info { position:absolute; inset:auto 0 0; padding:60px 20px 20px; background:linear-gradient(transparent, rgba(12, 12, 13, 0.95)); display:flex; align-items:end; justify-content:space-between; gap:12px; z-index:3; }
     .project h3 { margin:0 0 6px; font-size:1.1rem; }
     .meta { font-size:.7rem; text-transform:uppercase; letter-spacing:.1em; color:#c1beb8; }
-    .spec { position:absolute; left:15px; top:15px; z-index:3; background:#0b0b0be6; border:1px solid #ffffff40; padding:7px 9px; font-size:.62rem; text-transform:uppercase; letter-spacing:.12em; }
+    .spec { position:absolute; left:15px; top:15px; z-index:3; background:rgba(255, 0, 51, 0.15); border:1px solid rgba(255, 0, 51, 0.3); color:#ffb3c1; padding:7px 9px; font-size:.62rem; text-transform:uppercase; letter-spacing:.12em; }
     .play { width:38px; height:38px; border-radius:50%; display:grid; place-items:center; border:1px solid #ffffff88; flex:none; }
+    
     .services { background:var(--paper); color:var(--ink); padding:110px 0; }
     .services-top { display:grid; grid-template-columns:1.1fr .9fr; gap:70px; }
     .services h2 { max-width:850px; }
@@ -74,7 +78,7 @@
     .cta-link { color:var(--acid); font-size:1rem; border-bottom:1px solid; padding-bottom:6px; white-space:nowrap; }
     .foot { margin-top:90px; display:flex; justify-content:space-between; color:var(--muted); font-size:.72rem; text-transform:uppercase; letter-spacing:.1em; align-items:center; }
     
-    /* Exact Logo Styles */
+    /* Logo Styling */
     .brand img { max-height:45px; width:auto; object-fit:contain; object-position:left; filter:invert(1); display:block; }
     .footer-logo { width:110px; height:110px; border-radius:50%; object-fit:contain; filter:none; display:block; }
 
@@ -122,7 +126,7 @@
         <!-- Project 1: Tribucha Commercial Spec -->
         <div class="project wide" data-category="brand">
           <div class="spec">Veo · After Effects</div>
-          <div style="position:absolute; inset:0; background:#000;">
+          <div style="position:absolute; inset:0; background:#191619;">
             <iframe src="https://player.mediadelivery.net/play/787458/3957dcbe-ba7f-46bf-b96f-d462b6f9fbcd" loading="lazy" style="width:100%; height:100%; border:0; position:absolute; inset:0;" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture" allowfullscreen="true"></iframe>
           </div>
           <div class="project-info">
@@ -137,7 +141,7 @@
         <!-- Project 2: Burt's Bees Product Render -->
         <div class="project" data-category="product">
           <div class="spec">Compositing</div>
-          <div style="position:absolute; inset:0; background:#000;">
+          <div style="position:absolute; inset:0; background:#191619;">
             <iframe src="https://player.mediadelivery.net/play/787458/08e2a0aa-c88e-48be-baca-1b090171f264" loading="lazy" style="width:100%; height:100%; border:0; position:absolute; inset:0;" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture" allowfullscreen="true"></iframe>
           </div>
           <div class="project-info">
@@ -153,7 +157,7 @@
 
     </section>
     <section class="services" id="services"><div class="shell"><div class="services-top"><h2 data-text="copy-2">Bring the vision into focus.</h2><p class="services-copy" data-text="services-copy">A creative production partner for advertising, branding and social agencies, and established brands with an ambitious brief. We develop the concept, explore the visual possibilities and finish the film with professional editorial, motion design, color and sound.</p></div><div class="service-list"><div class="service"><span>01</span><b data-text="copy-3">Campaign Concept Films</b><p data-text="copy-4">Turn a creative brief into a visual treatment, pitch film or campaign concept.</p></div><div class="service"><span>02</span><b data-text="copy-5">Brand Films</b><p data-text="copy-6">Distinctive storytelling shaped around your brand, audience and campaign.</p></div><div class="service"><span>03</span><b data-text="copy-7">Product Visualization</b><p data-text="copy-8">Explore difficult-to-produce product settings and visual ideas, with product fidelity reviewed throughout.</p></div><div class="service"><span>04</span><b data-text="copy-9">Professional Post-production</b><p data-text="copy-10">Editing, motion graphics, color and sound bring the work together for delivery.</p></div></div></div></section>
-    <section class="process shell" id="process"><h2 data-text="copy-11">Creative direction. Every step.</h2><div class="steps"><div class="step"><span class="num">01 / Discover</span><h3 data-text="copy-12">Find the real brief</h3><p data-text="copy-13">We define the audience, business goal, message and practical constraints.</p></div><div class="step"><span class="num">02 / Design</span><h3 data-text="copy-14">Build the visual world</h3><p data-text="copy-15">Treatment, script, storyboard and reference frames establish the direction.</p></div><div class="step"><span class="num">03 / Create</span><h3 data-text="copy-16">Generate with intent</h3><p data-text="copy-17">We combine AI-assisted production with design and compositing, reviewing consistency shot by shot.</p></div><div class="step"><span class="num">04 / Finish</span><h3 data-text="copy-18">Make it production-ready</h3><p data-text="copy-19">Editorial, motion design, sound, color and delivery turn experiments into work.</p></div></div></section>
+    <section class="process shell" id="process"><h2 data-text="copy-11">Creative direction. Every step.</h2><div class="steps"><div class="step"><span class="num">01 / Discover</span><h3 data-text="copy-12">Find the real brief</h3><p data-text="copy-13">We define the audience, business goal, message and practical constraints.</p></div><div class="step"><span class="num">02 / Design</span><h3 data-text="copy-14">Build the visual world</h3><p data-text="copy-15">Treatment, script, storyboard and reference frames establish the direction.</p></div><div class="step"><span class="num">03 / Create</span><h3 data-text="copy-16">Generate with intent</h3><p data-text="copy-17">We combine AI-assisted production with design and compositing, reviewing consistency shot by shot.</p></div><div class="step"><span class="num">04 / Finish</span><h3 data-text="copy-18">Make it production-ready</h3><p data-text="copy-19">Editorial, motion design, sound, color and delivery turn experiments into work.</p></div></div></div></section>
   </main>
   <footer id="contact"><div class="shell"><div class="cta"><h2 data-text="copy-20">See your brand in motion</h2><div class="contact-block"><a class="hero-cta contact-link" id="contact-button" href="mailto:hello@fomostudio.ai">Contact us ↗</a><p style="margin-top:20px"><a id="contact-address" href="mailto:hello@fomostudio.ai">hello@fomostudio.ai</a></p><p><a id="contact-phone" hidden></a></p><div id="social-links" style="display:flex;gap:18px;flex-wrap:wrap;margin:18px 0"></div><p data-text="offer">Request a free 5-second watermarked concept before commissioning a full project.</p><a class="hero-cta contact-link" href="mailto:hello@fomostudio.ai?subject=FØMØ%20Studio%20concept%20request">Request your concept ↗</a></div></div><div class="foot"><span><img class="footer-logo" src="/logo.svg" alt="FØMØ Studio"></span><span id="location">Available worldwide · Based in Raleigh, NC</span><span>© 2026</span><a class="editor-link" id="edit-link" href="/admin" hidden>Edit page</a></div></div></footer>
 
