@@ -3,16 +3,16 @@ export default {
     const url = new URL(request.url);
     const path = url.pathname;
 
-    // 1. Handle /me (Admin session check)
-    if (path === "/me") {
+    // 1. Handle /api/me (Admin session check)
+    if (path === "/api/me" || path === "/me") {
       return new Response(JSON.stringify({ authenticated: true, user: "admin" }), {
         status: 200,
         headers: { "Content-Type": "application/json" }
       });
     }
 
-    // 2. Handle /content (Get & Save website text/metadata)
-    if (path === "/content") {
+    // 2. Handle /api/content (Get & Save website text/metadata)
+    if (path === "/api/content" || path === "/content") {
       if (request.method === "GET") {
         const data = await env.FOMO_STORE?.get("site_content");
         return new Response(
@@ -32,8 +32,8 @@ export default {
       }
     }
 
-    // 3. Handle /upload (Bunny.net video stream integration)
-    if (path === "/upload" && request.method === "POST") {
+    // 3. Handle /api/upload (Bunny.net video stream integration)
+    if ((path === "/api/upload" || path === "/upload") && request.method === "POST") {
       const { title } = await request.json().catch(() => ({}));
       if (env.BUNNY_LIBRARY_ID && env.BUNNY_API_KEY) {
         const bunnyRes = await fetch(
