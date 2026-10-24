@@ -129,6 +129,9 @@
     }
     @media(max-width:420px){.navlinks a[href="#services"]{display:none}.steps{grid-template-columns:1fr}.step,.step + .step{padding:22px 0;border-right:0;border-bottom:1px solid var(--line);min-height:0}.step h3{margin-top:22px}}
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.hero:before,.ticker span{animation:none}}
+    /* Fit the 1536 x 1344 films without cropping; the surrounding stage supplies the color. */
+    .video-stage{position:absolute;inset:0;background:#28151c;container-type:size}
+    .video-stage iframe{width:min(100cqw,114.285714cqh)!important;height:min(100cqh,87.5cqw)!important;inset:50% auto auto 50%!important;transform:translate(-50%,-50%)}
   </style>
 </head>
 <body>
@@ -151,8 +154,8 @@
         <!-- Project 1: Tribucha Commercial Spec -->
         <div class="project wide" data-category="brand">
           <div class="spec">Veo · After Effects</div>
-          <div style="position:absolute; inset:0; background:#000;">
-            <iframe src="https://player.mediadelivery.net/play/787458/3957dcbe-ba7f-46bf-b96f-d462b6f9fbcd" loading="lazy" style="width:100%; height:100%; border:0; position:absolute; inset:0;" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture" allowfullscreen="true"></iframe>
+          <div class="video-stage">
+            <iframe src="https://player.mediadelivery.net/embed/787458/3957dcbe-ba7f-46bf-b96f-d462b6f9fbcd" loading="lazy" style="width:100%; height:100%; border:0; position:absolute; inset:0;" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture" allowfullscreen="true"></iframe>
           </div>
           <div class="project-info">
             <div>
@@ -166,8 +169,8 @@
         <!-- Project 2: Burt's Bees Product Render -->
         <div class="project" data-category="product">
           <div class="spec">Compositing</div>
-          <div style="position:absolute; inset:0; background:#000;">
-            <iframe src="https://player.mediadelivery.net/play/787458/bf32c1aa-8fdc-40b0-9771-4ce6ed6b4240" loading="lazy" style="width:100%; height:100%; border:0; position:absolute; inset:0;" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture" allowfullscreen="true"></iframe>
+          <div class="video-stage">
+            <iframe src="https://player.mediadelivery.net/embed/787458/bf32c1aa-8fdc-40b0-9771-4ce6ed6b4240" loading="lazy" style="width:100%; height:100%; border:0; position:absolute; inset:0;" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture" allowfullscreen="true"></iframe>
           </div>
           <div class="project-info">
             <div>
