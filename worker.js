@@ -63,31 +63,7 @@ export default {
       );
     }
 
-    // 2. Try fetching static asset directly (CSS, JS, images, etc.)
-    try {
-      const assetResponse = await env.ASSETS.fetch(request);
-      if (assetResponse.status !== 404) {
-        return assetResponse;
-      }
-    } catch (e) {
-      // Ignore asset fetch errors
-    }
-
-    // 3. SPA Fallback: Serve index.html with enforced text/html MIME type
-    try {
-      const indexUrl = new URL("/index.html", request.url);
-      const assetResponse = await env.ASSETS.fetch(new Request(indexUrl, request));
-      
-      const body = await assetResponse.text();
-      return new Response(body, {
-        status: 200,
-        headers: {
-          "Content-Type": "text/html; charset=UTF-8",
-          "Cache-Control": "no-cache"
-        }
-      });
-    } catch (e) {
-      return new Response("Not Found", { status: 404 });
-    }
+    // 2. Delegate all static assets and SPA routes (/admin, etc.) to Cloudflare native asset binding
+    return env.ASSETS.fetch(request);
   }
 };
