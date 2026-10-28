@@ -37,6 +37,15 @@
   "background": "#28151c",
   "projects": [
     {
+      "id": "9f65cb3a-1290-4265-8721-714146f89431",
+      "title": "Dr. Squatch — Character Concept",
+      "meta": "Character creation · Product compositing · Post-production",
+      "label": "Independent concept · Not commissioned",
+      "category": "brand",
+      "ratio": 1.7777777777777777,
+      "wide": true
+    },
+    {
       "id": "3957dcbe-ba7f-46bf-b96f-d462b6f9fbcd",
       "title": "Tribucha Commercial Spec",
       "meta": "Generative AI Workflow & Grading",
