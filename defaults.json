@@ -73,6 +73,15 @@
       "wide": false
     },
     {
+      "id": "ada8e197-ba11-4c24-b0f1-a7bcca03a57b",
+      "title": "Eucamint",
+      "meta": "Product concept",
+      "label": "Independent concept",
+      "category": "product",
+      "ratio": 1,
+      "wide": false
+    },
+    {
       "id": "0f1aecdf-14aa-4f9b-8593-392ad6659ec5",
       "title": "Videri — More Than Looks",
       "meta": "Chocolate concept",
@@ -98,15 +107,6 @@
       "category": "product",
       "ratio": 1,
       "wide": true
-    },
-    {
-      "id": "ada8e197-ba11-4c24-b0f1-a7bcca03a57b",
-      "title": "Eucamint",
-      "meta": "Product concept",
-      "label": "Independent concept",
-      "category": "product",
-      "ratio": 1,
-      "wide": false
     }
   ]
 }
